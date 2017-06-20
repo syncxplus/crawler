@@ -1,0 +1,43 @@
+# database
+spring.datasource:
+    url: jdbc:mysql://mariadb:3306/club
+    username: root
+    password: root
+    initialize: false
+    test-while-idle: true
+    validation-query: SELECT 1
+
+spring.jpa:
+    hibernate:
+        ddl-auto: none
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        database: mysql
+        show-sql: true
+
+# web
+server:
+    session:
+        timeout: 1800
+    port: 8080
+    context-path: /
+
+# security
+security.user.password: password
+
+# log
+logging.level.root: INFO
+logging.level.com.club: DEBUG
+logging.level.edu.uci.ics.crawler4j: DEBUG
+logging.path: logs
+
+crawler:
+    autohome:
+        task: "0 0 0 * * *" # second minite hour date month week (year)
+        storage: /crawler/autohome/
+        url: http://club.autohome.com.cn
+        parse: "0 0 * * * *"
+
+---
+# production
+spring.profiles: production
+logging.path: /usr/bin/app/logs

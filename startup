@@ -1,0 +1,6 @@
+#!/bin/sh
+cd `dirname ${0}`
+gradle clean
+gradle bootRepackage
+cd build/libs
+java -Xms512m -Xmx1024M -jar ./crawler-0.1.jar --spring.profiles.active=production

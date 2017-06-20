@@ -1,0 +1,9 @@
+version: '2'
+services:
+    crawler:
+        image: registry.aliyuncs.com/syncxplus/gradle:2.14.1
+        restart: always
+        volumes:
+            - .:/usr/bin/app
+        entrypoint: /bin/bash
+        command: startup

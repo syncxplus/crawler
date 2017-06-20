@@ -1,0 +1,15 @@
+## settings
+/.idea
+/.gradle
+
+## build
+/build
+
+## storage
+/crawler
+/data
+/gradle
+/logs
+
+## local configuration
+application.properties
